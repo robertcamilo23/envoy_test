@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  envoy_test:
+    build:
+      context: .
+      dockerfile: Dockerfile-envoy
+    volumes:
+      - ./config/envoy.json:/etc/envoy.json
+    expose:
+      - "15001"
+    ports:
+      - "15001:15001"
